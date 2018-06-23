@@ -91,7 +91,14 @@ namespace Practice5
                     }
                     else
                     {
-                        matr[i, j] = Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value);
+                        try
+                        {
+                            matr[i, j] = Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value);
+                        }
+                        catch (System.FormatException)
+                        {
+                            matr[i, j] = 0;
+                        }
                     }
                 }
             }
