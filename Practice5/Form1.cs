@@ -87,6 +87,7 @@ namespace Practice5
                 {
                     if (dataGridView1.Rows[i].Cells[j].Value == null)
                     {
+                        dataGridView1.Rows[i].Cells[j].Value = 0;
                         matr[i, j] = 0;
                     }
                     else
@@ -97,11 +98,13 @@ namespace Practice5
                         }
                         catch (System.FormatException)
                         {
+                            dataGridView1.Rows[i].Cells[j].Value = 0;
                             matr[i, j] = 0;
                         }
                     }
                 }
             }
+            dataGridView1.ReadOnly = true;
             double max = Double.MinValue;
             for(int i = s-1; i >= 0; i--)
             {
